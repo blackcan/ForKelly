@@ -2,36 +2,47 @@ var template_web_result = {};
 
 var data_web_result = {};
 
-function WebResultObj(title, url, content){
-	this.html = template_web_result;
-	this.html = this.html.replace('$TITLE$', title).replace('$URL$', url).replace('$CONTENT$', content);
-}
+function WebSearchInjector(){
+	var web_result_template = ''
+	var web_result_data = ''
+	$.get(chrome.extension.getURL('./templates/web_results.html'), function(data){
+		web_result_template = data;
+	})
+	$.get(chrome.extension.getURL('./data/web_results.json'), function(data){
+		web_result_data = JSON.parse(data);
+	})
 
-function replace_web_result(){
-	var search_results_dom = $('div#ires div.srg');
-	search_results_dom.html('');
-	for(i in data_web_result){
-		var result_obj = new WebResultObj(
-			data_web_result[i].title, 
-			data_web_result[i].url,
-			data_web_result[i].content);
-		search_results_dom.append(result_obj.html);
+	var _create_web_result_dom = function(title, url, content){
+		var template = web_result_template;
+		template = template.replace('$TITLE$', title).replace('$URL$', url).replace('$CONTENT$', content);
+		return template
 	}
-}
 
-function listen_web_result(event){
-	if(event.srcElement.id == 'fbar'){
-		replace_web_result();
+	var _replace_web_result = function (){
+		var search_results_dom = $('div#ires div.srg');
+		search_results_dom.html('');
+		var web_result_down = web_result_data.web_result_down;
+		for(i in web_result_down){
+			var result_dom = _create_web_result_dom(
+				web_result_down[i].title, 
+				web_result_down[i].url,
+				web_result_down[i].content);
+			search_results_dom.append(result_dom);
+		}
 	}
-}
 
-function web_search_inject(){
-	console.log(data_web_result);
-	if($('div#ires div.srg')[0]){
-		replace_web_result();
+	var _listen_web_result = function (event){
+		if(event.srcElement.id == 'fbar'){
+			_replace_web_result();
+		}
 	}
-	else{
-		$('div#main')[0].addEventListener('DOMNodeInserted', listen_web_result);
+	this.inject = function (){
+		if($('div#ires div.srg')[0]){
+			_replace_web_result();
+		}
+		else{
+			$('div#main')[0].addEventListener('DOMNodeInserted', _listen_web_result);
+		}
 	}
 }
 
@@ -41,13 +52,8 @@ function main(){
 	if(url.indexOf('q=') > -1){
 		if($(location).attr('hash').indexOf('q=') > -1 || url.indexOf('tbm') === -1){
 			console.log('web search');
-			$.get(chrome.extension.getURL('./templates/web_results.html'), function(data){
-				template_web_result = data;
-			})
-			$.get(chrome.extension.getURL('./data/web_results.json'), function(data){
-				data_web_result = JSON.parse(data);
-			})
-			web_search_inject();
+			var web_search_injector = new WebSearchInjector();
+			web_search_injector.inject();
 		}
 		else if(url.indexOf('tbm=isch') > -1){
 			console.log('image search');

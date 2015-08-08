@@ -1,17 +1,38 @@
-[
-	{
-		"title": "test.title1",
-		"url": "test.url1",
-		"content": "text.content1"
-	},
-	{
-		"title": "test.title2",
-		"url": "test.url2",
-		"content": "text.content2"
-	},
-	{
-		"title": "test.title3",
-		"url": "test.url3",
-		"content": "text.content3"
-	}
-]
+{
+	"web_result_up":
+	[
+		{
+			"title": "web_result_up.title1",
+			"url": "web_result_up.url1",
+			"content": "web_result_up.content1"
+		},
+		{
+			"title": "web_result_up.title2",
+			"url": "web_result_up.url2",
+			"content": "web_result_up.content2"
+		},
+		{
+			"title": "web_result_up.title3",
+			"url": "web_result_up.url3",
+			"content": "web_result_up.content3"
+		}
+	],
+	"web_result_down":
+	[
+		{
+			"title": "web_result_down.title1",
+			"url": "web_result_down.url1",
+			"content": "web_result_down.content1"
+		},
+		{
+			"title": "web_result_down.title2",
+			"url": "web_result_down.url2",
+			"content": "web_result_down.content2"
+		},
+		{
+			"title": "web_result_down.title3",
+			"url": "web_result_down.url3",
+			"content": "web_result_down.content3"
+		}
+	]
+}
