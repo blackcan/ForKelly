@@ -30,6 +30,7 @@
   ],
   "web_accessible_resources": [
     "templates/*.html",
-    "data/*.json"
+    "data/*.json",
+    "img/news/*"
   ]
 }

@@ -1,4 +1,22 @@
 {
+	"related_search_up":
+	[
+		"相關搜尋1_up",
+		"相關搜尋2_up",
+		"相關搜尋3_up"
+	],
+	"related_search_down":
+	{
+		"title":"TEST_TITLE的相關搜尋",
+		"list":
+		[
+			"相關搜尋1_down",
+			"相關搜尋2_down",
+			"相關搜尋3_down",
+			"相關搜尋4_down",
+			"相關搜尋5_down"
+		]
+	},
 	"web_result_up":
 	[
 		{
@@ -33,6 +51,27 @@
 			"title": "web_result_down.title3",
 			"url": "web_result_down.url3",
 			"content": "web_result_down.content3"
+		}
+	],
+	"web_result_news":
+	[
+		{
+			"title": "新聞標題1",
+			"img": "./img/news/news_1.jpeg",
+			"paper_name": "給我報報",
+			"content": "新聞內容1"
+		},
+		{
+			"title": "新聞標題2",
+			"img": "./img/news/news_2.jpeg",
+			"paper_name": "給我報報",
+			"content": "新聞內容2"
+		},
+		{
+			"title": "新聞標題3",
+			"img": "./img/news/news_3.jpeg",
+			"paper_name": "給我報報",
+			"content": "新聞內容3"
 		}
 	]
 }

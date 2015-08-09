@@ -1,41 +1,140 @@
-var template_web_result = {};
-
-var data_web_result = {};
-
 function WebSearchInjector(){
-	var web_result_template = ''
-	var web_result_data = ''
-	$.get(chrome.extension.getURL('./templates/web_results.html'), function(data){
-		web_result_template = data;
-	})
-	$.get(chrome.extension.getURL('./data/web_results.json'), function(data){
-		web_result_data = JSON.parse(data);
-	})
+	var related_search_up_template = '';
+	var related_search_down_template = '';
+	var web_search_template = '';
+	var web_result_template = '';
+	var web_result_news_template = '';
+	var web_result_data = '';
+
+	var _init = function() {
+		$.get(chrome.extension.getURL('./templates/related_search_up.html'), function(data){
+			related_search_up_template = data;
+		});
+		$.get(chrome.extension.getURL('./templates/related_search_down.html'), function(data){
+			related_search_down_template = data;
+		});
+		$.get(chrome.extension.getURL('./templates/web_search.html'), function(data){
+			web_search_template = data;
+		});
+		$.get(chrome.extension.getURL('./templates/web_results.html'), function(data){
+			web_result_template = data;
+		});
+		$.get(chrome.extension.getURL('./templates/web_result_news.html'), function(data){
+			web_result_news_template = data;
+		});
+		$.get(chrome.extension.getURL('./data/web_results.json'), function(data){
+			web_result_data = JSON.parse(data);
+		});	
+	};
+	_init();
+
+	var _create_related_search_up_dom = function(title){
+		var template = related_search_up_template;
+		template = template.replace('$TITLE$', title);
+		return template;
+	};
+
+	var _create_related_search_down_dom = function(title){
+		var template = related_search_down_template;
+		template = template.replace('$TITLE$', title);
+		return template;
+	};
 
 	var _create_web_result_dom = function(title, url, content){
 		var template = web_result_template;
 		template = template.replace('$TITLE$', title).replace('$URL$', url).replace('$CONTENT$', content);
-		return template
-	}
+		return template;
+	};
+
+	var _create_web_result_news_dom = function(title, img, paper_name, content){
+		var template = web_result_news_template;
+		template = template.
+			replace('$TITLE$', title).
+			replace('$IMG$', img).
+			replace('$PAPER_NAME$', paper_name).
+			replace('$CONTENT$', content);
+		return template;
+	};
+
+	var _inject_related_search_up = function (){
+		var inject_point_dom = $('.inject-related-search-up');
+		var inject_data = web_result_data.related_search_up;
+		for(i in inject_data){
+			var inject_dom = _create_related_search_up_dom(inject_data[i]);
+			inject_point_dom.append(inject_dom);
+		}
+	};
+
+	var _inject_related_search_down = function (){
+		var inject_point_dom = $('.inject-related-search-down-title');
+		var inject_data = web_result_data.related_search_down.title;
+		inject_point_dom.text(inject_data);
+
+		inject_data = web_result_data.related_search_down.list;
+		for(i in inject_data){
+			if(i % 2 == 0){
+				inject_point_dom = $('.inject-related-search-down-col-left');
+			}
+			else{
+				inject_point_dom = $('.inject-related-search-down-col-right');
+			}
+			var inject_dom = _create_related_search_down_dom(inject_data[i]);
+			inject_point_dom.append(inject_dom);
+		}
+	};
+
+	var _inject_web_result_down = function (){
+		var inject_point_dom = $('.inject-web-result-down');
+		var inject_data = web_result_data.web_result_down;
+		for(i in inject_data){
+			var inject_dom = _create_web_result_dom(
+				inject_data[i].title, 
+				inject_data[i].url,
+				inject_data[i].content);
+			inject_point_dom.append(inject_dom);
+		}
+	};
+
+	var _inject_web_result_up = function (){
+		var inject_point_dom = $('.inject-web-result-up');
+		var inject_data = web_result_data.web_result_up;
+		for(i in inject_data){
+			var inject_dom = _create_web_result_dom(
+				inject_data[i].title, 
+				inject_data[i].url,
+				inject_data[i].content);
+			inject_point_dom.append(inject_dom);
+		}
+	};
+
+	var _inject_web_result_news = function (){
+		var inject_point_dom = $('.inject-web-result-news');
+		var inject_data = web_result_data.web_result_news;
+		for(i in inject_data){
+			var inject_dom = _create_web_result_news_dom(
+				inject_data[i].title, 
+				chrome.extension.getURL(inject_data[i].img),
+				inject_data[i].paper_name,
+				inject_data[i].content);
+			inject_point_dom.append(inject_dom);
+		}
+	};
 
 	var _replace_web_result = function (){
-		var search_results_dom = $('div#ires div.srg');
-		search_results_dom.html('');
-		var web_result_down = web_result_data.web_result_down;
-		for(i in web_result_down){
-			var result_dom = _create_web_result_dom(
-				web_result_down[i].title, 
-				web_result_down[i].url,
-				web_result_down[i].content);
-			search_results_dom.append(result_dom);
-		}
-	}
+		$('div#rcnt').html(web_search_template);
+		_inject_related_search_up();
+		_inject_related_search_down();
+		_inject_web_result_up();
+		_inject_web_result_down();
+		_inject_web_result_news();
+	};
 
 	var _listen_web_result = function (event){
 		if(event.srcElement.id == 'fbar'){
 			_replace_web_result();
 		}
-	}
+	};
+
 	this.inject = function (){
 		if($('div#ires div.srg')[0]){
 			_replace_web_result();
@@ -43,7 +142,7 @@ function WebSearchInjector(){
 		else{
 			$('div#main')[0].addEventListener('DOMNodeInserted', _listen_web_result);
 		}
-	}
+	};
 }
 
 function main(){
