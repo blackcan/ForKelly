@@ -29,8 +29,8 @@
     "https://www.google.com.tw/*"
   ],
   "web_accessible_resources": [
-    "templates/*.html",
-    "data/*.json",
-    "img/news/*"
+    "templates/*",
+    "data/*",
+    "img/*"
   ]
 }

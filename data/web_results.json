@@ -1,4 +1,6 @@
 {
+	"title": "TEST - Google 搜尋",
+	"search_text": "Search Test",
 	"related_search_up":
 	[
 		"相關搜尋1_up",
@@ -57,21 +59,55 @@
 	[
 		{
 			"title": "新聞標題1",
-			"img": "./img/news/news_1.jpeg",
+			"img": "img/news/news_1.jpeg",
 			"paper_name": "給我報報",
 			"content": "新聞內容1"
 		},
 		{
 			"title": "新聞標題2",
-			"img": "./img/news/news_2.jpeg",
+			"img": "img/news/news_2.jpeg",
 			"paper_name": "給我報報",
 			"content": "新聞內容2"
 		},
 		{
 			"title": "新聞標題3",
-			"img": "./img/news/news_3.jpeg",
+			"img": "img/news/news_3.jpeg",
 			"paper_name": "給我報報",
 			"content": "新聞內容3"
 		}
-	]
+	],
+	"right_table":
+	{
+		"name": "Boy & Girl",
+		"type": "Couple",
+		"description": "測試用文字，測試用文字，我是測試用文字，請忽略我我是測試用文字。測試用文字，測試用文字，我是測試用文字，請忽略我我是測試用文字。測試用文字，測試用文字，我是測試用文字，請忽略我我是測試用文字。",
+		"image_list":
+		[
+			"img/right_table_img/1.jpeg",
+			"img/right_table_img/2.jpeg",
+			"img/right_table_img/3.jpeg",
+			"img/right_table_img/4.jpeg",
+			"img/right_table_img/5.jpeg",
+			"img/right_table_img/6.jpeg",
+			"img/right_table_img/7.jpeg"
+		],
+		"detail":
+		[
+			{"title": "標題1", "content": "內容1"},
+			{"title": "標題2", "content": "內容2"},
+			{"title": "標題3", "content": "內容3"},
+			{"title": "標題4", "content": "內容4"}
+		],
+		"movie":
+		[
+			{"title": "電影1", "img": "/img/movie/1.jpeg", "time": "2015 年"},
+			{"title": "電影2", "img": "/img/movie/2.jpeg", "time": "2015 年"},
+			{"title": "電影3", "img": "/img/movie/3.jpeg", "time": "2015 年"},
+			{"title": "電影4", "img": "/img/movie/4.jpeg", "time": "2015 年"},
+			{"title": "電影5", "img": "/img/movie/5.jpeg", "time": "2015 年"},
+			{"title": "電影6", "img": "/img/movie/6.jpeg", "time": "2015 年"},
+			{"title": "電影7", "img": "/img/movie/7.jpeg", "time": "2015 年"}
+		]
+	}
+	
 }

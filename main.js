@@ -4,6 +4,9 @@ function WebSearchInjector(){
 	var web_search_template = '';
 	var web_result_template = '';
 	var web_result_news_template = '';
+	var right_table_img_template = '';
+	var right_table_detail_template = '';
+	var right_table_movie_template = '';
 	var web_result_data = '';
 
 	var _init = function() {
@@ -21,6 +24,15 @@ function WebSearchInjector(){
 		});
 		$.get(chrome.extension.getURL('./templates/web_result_news.html'), function(data){
 			web_result_news_template = data;
+		});
+		$.get(chrome.extension.getURL('./templates/right_table_img.html'), function(data){
+			right_table_img_template = data;
+		});
+		$.get(chrome.extension.getURL('./templates/right_table_detail.html'), function(data){
+			right_table_detail_template = data;
+		});
+		$.get(chrome.extension.getURL('./templates/right_table_movie.html'), function(data){
+			right_table_movie_template = data;
 		});
 		$.get(chrome.extension.getURL('./data/web_results.json'), function(data){
 			web_result_data = JSON.parse(data);
@@ -54,6 +66,43 @@ function WebSearchInjector(){
 			replace('$PAPER_NAME$', paper_name).
 			replace('$CONTENT$', content);
 		return template;
+	};
+
+	var _create_right_table_img_dom = function(img_list){
+		var template = right_table_img_template;
+		for(i in img_list){
+			template = template.replace('$IMG_' + i + '$', img_list[i]);
+		}
+		return template;
+	};
+
+	var _create_right_table_detail_dom = function(title, content){
+		var template = right_table_detail_template;
+		template = template.replace('$TITLE$', title).replace('$CONTENT$', content);
+		return template;
+	};
+
+	var _create_right_table_movie_dom = function(title, img, time){
+		var template = right_table_movie_template;
+		template = template.
+			replace('$TITLE$', title).
+			replace('$IMG$', img).
+			replace('$TIME$', time);
+		return template;
+	};
+
+	var _inject_common_data = function (){
+		var inject_point_dom = $('title');
+		var inject_data = web_result_data.title;
+		inject_point_dom.text(inject_data);
+
+		inject_point_dom = $('input#lst-ib');
+		inject_point_dom.attr('id', 'inject-search-text');
+		inject_data = web_result_data.search_text;
+		inject_point_dom.val(inject_data);
+
+		inject_point_dom = $('.sbdd_b');
+		inject_point_dom.hide();
 	};
 
 	var _inject_related_search_up = function (){
@@ -120,13 +169,65 @@ function WebSearchInjector(){
 		}
 	};
 
+	var _inject_right_table_img = function (){
+		var inject_point_dom = $('.inject-right-table-img');
+		var inject_data = web_result_data.right_table.image_list;
+		for(i in inject_data){
+			inject_data[i] = chrome.extension.getURL(inject_data[i]);
+		}
+		var inject_dom = _create_right_table_img_dom(inject_data);
+		inject_point_dom.append(inject_dom);
+	};
+
+	var _inject_right_table_text_data = function (){
+		var inject_point_dom = $('.inject-right-table-name');
+		var inject_data = web_result_data.right_table.name;
+		inject_point_dom.text(inject_data);
+
+		inject_point_dom = $('.inject-right-table-type');
+		inject_data = web_result_data.right_table.type;
+		inject_point_dom.text(inject_data);
+
+		inject_point_dom = $('.inject-right-table-desc');
+		inject_data = web_result_data.right_table.description;
+		inject_point_dom.text(inject_data);
+	};
+
+	var _inject_right_table_detail = function (){
+		var inject_point_dom = $('.inject-right-table-detail');
+		var inject_data = web_result_data.right_table.detail;
+		for(i in inject_data){
+			var inject_dom = _create_right_table_detail_dom(
+				inject_data[i].title,
+				inject_data[i].content);
+			inject_point_dom.append(inject_dom);
+		}
+	};
+
+	var _inject_right_table_movie = function (){
+		var inject_point_dom = $('.inject-right-table-movie');
+		var inject_data = web_result_data.right_table.movie;
+		for(i in inject_data){
+			var inject_dom = _create_right_table_movie_dom(
+				inject_data[i].title,
+				chrome.extension.getURL(inject_data[i].img),
+				inject_data[i].time);
+			inject_point_dom.append(inject_dom);
+		}
+	};
+
 	var _replace_web_result = function (){
 		$('div#rcnt').html(web_search_template);
+		_inject_common_data();
 		_inject_related_search_up();
 		_inject_related_search_down();
 		_inject_web_result_up();
 		_inject_web_result_down();
 		_inject_web_result_news();
+		_inject_right_table_img();
+		_inject_right_table_text_data();
+		_inject_right_table_detail();
+		_inject_right_table_movie();
 	};
 
 	var _listen_web_result = function (event){
