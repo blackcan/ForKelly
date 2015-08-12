@@ -107,6 +107,69 @@
 			{"title": "電影5", "img": "/img/movie/5.jpeg", "time": "2015 年"},
 			{"title": "電影6", "img": "/img/movie/6.jpeg", "time": "2015 年"},
 			{"title": "電影7", "img": "/img/movie/7.jpeg", "time": "2015 年"}
+		],
+		"thumbnail":
+		[
+			{
+				"title": "一起看過的電影",
+				"img_height": 110,
+				"img_width": 72,
+				"entity":
+				[
+					{"title": "電影1", "subtitle": "2015 年", "img": "/img/movie/1.jpeg"},
+					{"title": "電影2", "subtitle": "2015 年", "img": "/img/movie/2.jpeg"},
+					{"title": "電影3", "subtitle": "2015 年", "img": "/img/movie/3.jpeg"},
+					{"title": "電影4", "subtitle": "2015 年", "img": "/img/movie/4.jpeg"},
+					{"title": "電影5", "subtitle": "2015 年", "img": "/img/movie/5.jpeg"},
+					{"title": "電影6", "subtitle": "2015 年", "img": "/img/movie/6.jpeg"},
+					{"title": "電影7", "subtitle": "2015 年", "img": "/img/movie/7.jpeg"}
+				]
+			},
+			{
+				"title": "一起征服的夜市",
+				"img_height": 72,
+				"img_width": 72,
+				"entity":
+				[
+					{"title": "夜市1", "subtitle": "2015 年", "img": "/img/movie/1.jpeg"},
+					{"title": "夜市2", "subtitle": "2015 年", "img": "/img/movie/2.jpeg"},
+					{"title": "夜市3", "subtitle": "2015 年", "img": "/img/movie/3.jpeg"},
+					{"title": "夜市4", "subtitle": "2015 年", "img": "/img/movie/4.jpeg"},
+					{"title": "夜市5", "subtitle": "2015 年", "img": "/img/movie/5.jpeg"},
+					{"title": "夜市6", "subtitle": "2015 年", "img": "/img/movie/6.jpeg"},
+					{"title": "夜市7", "subtitle": "2015 年", "img": "/img/movie/7.jpeg"}
+				]
+			},
+			{
+				"title": "一起征服的夜市",
+				"img_height": 72,
+				"img_width": 72,
+				"entity":
+				[
+					{"title": "夜市1", "subtitle": "2015 年", "img": "/img/movie/1.jpeg"},
+					{"title": "夜市2", "subtitle": "2015 年", "img": "/img/movie/2.jpeg"},
+					{"title": "夜市3", "subtitle": "2015 年", "img": "/img/movie/3.jpeg"},
+					{"title": "夜市4", "subtitle": "2015 年", "img": "/img/movie/4.jpeg"},
+					{"title": "夜市5", "subtitle": "2015 年", "img": "/img/movie/5.jpeg"},
+					{"title": "夜市6", "subtitle": "2015 年", "img": "/img/movie/6.jpeg"},
+					{"title": "夜市7", "subtitle": "2015 年", "img": "/img/movie/7.jpeg"}
+				]
+			},
+			{
+				"title": "一起征服的夜市",
+				"img_height": 72,
+				"img_width": 72,
+				"entity":
+				[
+					{"title": "夜市1", "subtitle": "2015 年", "img": "/img/movie/1.jpeg"},
+					{"title": "夜市2", "subtitle": "2015 年", "img": "/img/movie/2.jpeg"},
+					{"title": "夜市3", "subtitle": "2015 年", "img": "/img/movie/3.jpeg"},
+					{"title": "夜市4", "subtitle": "2015 年", "img": "/img/movie/4.jpeg"},
+					{"title": "夜市5", "subtitle": "2015 年", "img": "/img/movie/5.jpeg"},
+					{"title": "夜市6", "subtitle": "2015 年", "img": "/img/movie/6.jpeg"},
+					{"title": "夜市7", "subtitle": "2015 年", "img": "/img/movie/7.jpeg"}
+				]
+			}
 		]
 	}
 	

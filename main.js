@@ -6,7 +6,8 @@ function WebSearchInjector(){
 	var web_result_news_template = '';
 	var right_table_img_template = '';
 	var right_table_detail_template = '';
-	var right_table_movie_template = '';
+	var right_table_thumbnail_template = '';
+	var right_table_thumbnail_entity_template = '';
 	var web_result_data = '';
 
 	var _init = function() {
@@ -31,8 +32,11 @@ function WebSearchInjector(){
 		$.get(chrome.extension.getURL('./templates/right_table_detail.html'), function(data){
 			right_table_detail_template = data;
 		});
-		$.get(chrome.extension.getURL('./templates/right_table_movie.html'), function(data){
-			right_table_movie_template = data;
+		$.get(chrome.extension.getURL('./templates/right_table_thumbnail.html'), function(data){
+			right_table_thumbnail_template = data;
+		});
+		$.get(chrome.extension.getURL('./templates/right_table_thumbnail_entity.html'), function(data){
+			right_table_thumbnail_entity_template = data;
 		});
 		$.get(chrome.extension.getURL('./data/web_results.json'), function(data){
 			web_result_data = JSON.parse(data);
@@ -82,12 +86,20 @@ function WebSearchInjector(){
 		return template;
 	};
 
-	var _create_right_table_movie_dom = function(title, img, time){
-		var template = right_table_movie_template;
+	var _create_right_table_thumbnail_dom = function(title, index){
+		var template = right_table_thumbnail_template;
+		template = template.replace('$TITLE$', title).replace('$INDEX$', index);
+		return template;
+	};
+
+	var _create_right_table_thumbnail_entity_dom = function(title, subtitle, width, height, img){
+		var template = right_table_thumbnail_entity_template;
 		template = template.
 			replace('$TITLE$', title).
-			replace('$IMG$', img).
-			replace('$TIME$', time);
+			replace('$SUBTITLE$', subtitle).
+			replace('$WIDTH$', width).
+			replace('$HEIGHT$', height).
+			replace('$IMG$', img);
 		return template;
 	};
 
@@ -204,15 +216,24 @@ function WebSearchInjector(){
 		}
 	};
 
-	var _inject_right_table_movie = function (){
-		var inject_point_dom = $('.inject-right-table-movie');
-		var inject_data = web_result_data.right_table.movie;
+	var _inject_right_table_thumbnail = function (){
+		var inject_point_dom = $('.inject-right-table-thumbnail');
+		var inject_data = web_result_data.right_table.thumbnail;
 		for(i in inject_data){
-			var inject_dom = _create_right_table_movie_dom(
-				inject_data[i].title,
-				chrome.extension.getURL(inject_data[i].img),
-				inject_data[i].time);
+			var inject_dom = _create_right_table_thumbnail_dom(inject_data[i].title, i);
 			inject_point_dom.append(inject_dom);
+
+			var sub_inject_point_dom = $('.inject-right-table-thumbnail-entity-' + i);
+			var sub_inject_data = web_result_data.right_table.thumbnail[i].entity;
+			for(j in sub_inject_data){
+				var sub_inject_dom = _create_right_table_thumbnail_entity_dom(
+					sub_inject_data[j].title,
+					sub_inject_data[j].subtitle,
+					inject_data[i].img_width,
+					inject_data[i].img_height,
+					chrome.extension.getURL(sub_inject_data[j].img));
+				sub_inject_point_dom.append(sub_inject_dom);
+			}
 		}
 	};
 
@@ -227,7 +248,7 @@ function WebSearchInjector(){
 		_inject_right_table_img();
 		_inject_right_table_text_data();
 		_inject_right_table_detail();
-		_inject_right_table_movie();
+		_inject_right_table_thumbnail();
 	};
 
 	var _listen_web_result = function (event){
