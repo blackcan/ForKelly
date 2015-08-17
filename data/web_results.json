@@ -88,31 +88,81 @@
 	],
 	"web_result_down":
 	[
-		{
-			"title": "web_result_down.title1",
-			"url": "web_result_down.url1",
-			"content": "web_result_down.content1"
-		}
+	
 	],
 	"web_result_news":
 	[
 		{
-			"title": "新聞標題1",
-			"img": "img/news/news_1.jpeg",
+			"title": "小花大黃蜂",
+			"img": "img/news/1.jpg",
 			"paper_name": "給我報報",
-			"content": "新聞內容1"
+			"content": "小花大黃蜂對上神奇小魔女的決鬥之大黃蜂的宣傳照"
 		},
 		{
-			"title": "新聞標題2",
-			"img": "img/news/news_2.jpeg",
+			"title": "神奇小魔女",
+			"img": "img/news/2.png",
 			"paper_name": "給我報報",
-			"content": "新聞內容2"
+			"content": "小花大黃蜂對上神奇小魔女的決鬥之小魔女的宣傳照"
 		},
 		{
-			"title": "新聞標題3",
-			"img": "img/news/news_3.jpeg",
+			"title": "最愛逢甲夜市",
+			"img": "img/news/3.jpg",
 			"paper_name": "給我報報",
-			"content": "新聞內容3"
+			"content": "兩個人最愛去逢甲夜市，只要有到台中，一定會去一趟，一定會去買豬血糕"
+		},
+		{
+			"title": "方大同演唱會",
+			"img": "img/news/4.jpg",
+			"paper_name": "給我報報",
+			"content": "兩個人一起去聽方大同的演唱會，罐頭難得穿很帥（肚子已經回不去了）"
+		},
+		{
+			"title": "罐頭騙人照",
+			"img": "img/news/5.jpg",
+			"paper_name": "給我報報",
+			"content": "宜瑾幫罐頭拍的一張神照，罐頭一直到現在還在用這張照片騙人XDDD"
+		},
+		{
+			"title": "宜瑾超閃美照",
+			"img": "img/news/6.png",
+			"paper_name": "給我報報",
+			"content": "罐頭橋燈光橋很久，終於拍出一張光線非常好的照片！！"
+		},
+		{
+			"title": "俠盜獵車手",
+			"img": "img/news/7.jpg",
+			"paper_name": "給我報報",
+			"content": "宜瑾正在專心開車，看起來架勢十足，教練請罐頭幫忙顧，自己跑去納涼了"
+		},
+		{
+			"title": "宜瑾畢業典禮",
+			"img": "img/news/8.jpg",
+			"paper_name": "給我報報",
+			"content": "很會念書的宜瑾順利畢業了，粉紅色的熊叫做小粉，絕招是粉粉拳！"
+		},
+		{
+			"title": "罐頭畢業典禮",
+			"img": "img/news/9.jpg",
+			"paper_name": "給我報報",
+			"content": "有了宜瑾在論文撰寫上的指導，最後罐頭也順利畢業了，可喜可賀可喜可賀！！"
+		},
+		{
+			"title": "宜瑾送罐頭的禮物1",
+			"img": "img/news/10.jpg",
+			"paper_name": "給我報報",
+			"content": "宜瑾很用心包裝的禮物，裡面是一件襯衫，隔天罐頭立刻穿上去參加Yahoo Open Hack記者會，罐頭也一直把這袋子留著"
+		},
+		{
+			"title": "宜瑾送罐頭的禮物2",
+			"img": "img/news/11.jpg",
+			"paper_name": "給我報報",
+			"content": "宜瑾很用心設計的禮物，拿兩人合照的照片去做了一個小抱枕，罐頭一直收藏著"
+		},
+		{
+			"title": "殺手情侶檔",
+			"img": "img/news/12.jpg",
+			"paper_name": "給我報報",
+			"content": "兩人突然發神經，拍了一張令人噴飯的殺手風格交往二週年紀念照片XDD"
 		}
 	],
 	"right_table":
@@ -122,13 +172,13 @@
 		"description": "曾經在大一時當過一年同學，兩人當時並沒有交集，但卻在研究所時期的一次大學同學會重新認識彼此並相戀。罐頭研究所畢業後被抓去海軍陸戰隊，在高雄度過一年的軍旅生涯，在這一年中，宜瑾都會用簡訊跟電話幫罐頭打氣，讓罐頭更有動力去度過那一段沈悶的日子。現在，宜瑾是宏碁的軟體工程師，罐頭是趨勢的軟體工程師，兩人每天手牽手搭捷運上班，下班也都一起吃晚餐，非常甜蜜。",
 		"image_list":
 		[
-			"img/right_table_img/1.jpeg",
-			"img/right_table_img/2.jpeg",
-			"img/right_table_img/3.jpeg",
-			"img/right_table_img/4.jpeg",
-			"img/right_table_img/5.jpeg",
-			"img/right_table_img/6.jpeg",
-			"img/right_table_img/7.jpeg"
+			"img/right_table_img/1.jpg",
+			"img/right_table_img/2.png",
+			"img/right_table_img/3.jpg",
+			"img/right_table_img/4.jpg",
+			"img/right_table_img/5.jpg",
+			"img/right_table_img/6.jpg",
+			"img/right_table_img/7.jpg"
 		],
 		"detail":
 		[
