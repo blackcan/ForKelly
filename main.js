@@ -185,6 +185,7 @@ function WebSearchInjector(){
 		var inject_point_dom = $('.inject-right-table-img');
 		var inject_data = web_result_data.right_table.image_list;
 		for(i in inject_data){
+			console.log(inject_data[i]);
 			inject_data[i] = chrome.extension.getURL(inject_data[i]);
 		}
 		var inject_dom = _create_right_table_img_dom(inject_data);
@@ -249,10 +250,12 @@ function WebSearchInjector(){
 		_inject_right_table_text_data();
 		_inject_right_table_detail();
 		_inject_right_table_thumbnail();
+		$('a').attr('href', 'javascript:');
 	};
 
 	var _listen_web_result = function (event){
 		if(event.srcElement.id == 'fbar'){
+			_init();
 			_replace_web_result();
 		}
 	};
