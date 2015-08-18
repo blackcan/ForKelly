@@ -33,7 +33,7 @@
 		{
 			"title": "感謝逢甲夜市",
 			"url": "我愛夜市",
-			"content": "同學會之後一直跟妳聊天，感覺妳真的是很好的女生，心中也萌發了想跟妳交往看看的想法，所以我鼓起勇氣請妳當導遊帶我去逛逢甲夜市，沒想到妳也馬上答應了！天啊！竟然約成功了，連我自己都不敢相信！！馬上開始研究要怎麼從台中車站到逢甲夜市，先想好一堆話題以免到時候不知道要講什麼。到了約定的那天，我準時到達台中車站，也看到妳騎著摩托車出現，我就這樣載著妳順利地到達逢甲夜市，我還記得妳那時候先帶我去排大腸包小腸，之後還吃了豬血糕、烤鴨夾餅、豆漿紅茶、香蕉冰，跟妳一起在逢甲大學裡面散步，發現跟妳相處是很自在很開心的，而我也就這樣喜歡上妳了。"
+			"content": "同學會之後一直跟妳聊天，感覺妳是個不錯的女生，心中也萌發了想跟妳交往看看的想法，所以我鼓起勇氣請妳當導遊帶我去逛逢甲夜市，沒想到妳也馬上答應了！天啊！竟然約成功了，連我自己都不敢相信！！馬上開始研究要怎麼從台中車站到逢甲夜市，先想好一堆話題以免到時候不知道要講什麼。到了約定的那天，我準時到達台中車站，也看到妳騎著摩托車出現，我就這樣載著妳順利地到達逢甲夜市，我還記得妳那時候先帶我去排大腸包小腸，之後還吃了豬血糕、烤鴨夾餅、豆漿紅茶、香蕉冰，跟妳一起在逢甲大學裡面散步，發現跟妳相處是很自在很開心的，而我也就這樣喜歡上妳了。"
 		},
 		{
 			"title": "賽德克巴萊",
@@ -220,8 +220,12 @@
 					{"title": "忠孝夜市", "subtitle": "甘蔗牛奶", "img": "/img/nightmarket/chungshiao.jpg"},
 					{"title": "淡水老街", "subtitle": "炸魷魚", "img": "/img/nightmarket/dangsway.jpg"},
 					{"title": "樂華夜市", "subtitle": "臭豆腐", "img": "/img/nightmarket/lewha.jpg"},
+					{"title": "中壢夜市", "subtitle": "米粉湯", "img": "/img/nightmarket/chungli.jpg"},
 					{"title": "寧夏夜市", "subtitle": "蛋黃芋餅", "img": "/img/nightmarket/ningshia.jpg"},
-					{"title": "羅東夜市", "subtitle": "蔥多餅", "img": "/img/nightmarket/lodong.jpg"}
+					{"title": "羅東夜市", "subtitle": "蔥多餅", "img": "/img/nightmarket/lodong.jpg"},
+					{"title": "輔大夜市", "subtitle": "東坡島瓜", "img": "/img/nightmarket/fuda.jpg"},
+					{"title": "饒河街夜市", "subtitle": "胡椒餅", "img": "/img/nightmarket/river.jpg"},
+					{"title": "瑞豐夜市", "subtitle": "鹽烤雞排", "img": "/img/nightmarket/reifeng.jpg"}
 				]
 			},
 			{
@@ -230,13 +234,25 @@
 				"img_width": 72,
 				"entity":
 				[
-					{"title": "夜市1", "subtitle": "2015 年", "img": "/img/movie/1.jpeg"},
-					{"title": "夜市2", "subtitle": "2015 年", "img": "/img/movie/2.jpeg"},
-					{"title": "夜市3", "subtitle": "2015 年", "img": "/img/movie/3.jpeg"},
-					{"title": "夜市4", "subtitle": "2015 年", "img": "/img/movie/4.jpeg"},
-					{"title": "夜市5", "subtitle": "2015 年", "img": "/img/movie/5.jpeg"},
-					{"title": "夜市6", "subtitle": "2015 年", "img": "/img/movie/6.jpeg"},
-					{"title": "夜市7", "subtitle": "2015 年", "img": "/img/movie/7.jpeg"}
+					{"title": "Nagi", "subtitle": "限定王很特別", "img": "/img/lamen/1.jpg"},
+					{"title": "太龍軒", "subtitle": "沾麵", "img": "/img/lamen/2.jpg"},
+					{"title": "梅光軒", "subtitle": "鹽味拉麵", "img": "/img/lamen/3.jpg"},
+					{"title": "花月嵐", "subtitle": "鐵板飯", "img": "/img/lamen/4.jpg"},
+					{"title": "鳥華", "subtitle": "可惜倒了", "img": "/img/lamen/5.jpg"},
+					{"title": "山頭火", "subtitle": "鹽味拉麵", "img": "/img/lamen/6.jpg"},
+					{"title": "一風堂", "subtitle": "有點小碗", "img": "/img/lamen/7.jpg"},
+					{"title": "屯京", "subtitle": "常排隊", "img": "/img/lamen/8.jpg"},
+					{"title": "三田製麵所", "subtitle": "魚介沾麵", "img": "/img/lamen/9.jpg"},
+					{"title": "誠屋", "subtitle": "普通", "img": "/img/lamen/10.jpg"},
+					{"title": "麵通屋", "subtitle": "變難吃了", "img": "/img/lamen/11.jpg"},
+					{"title": "麵屋輝", "subtitle": "還OK", "img": "/img/lamen/12.jpg"},
+					{"title": "大海拉麵", "subtitle": "有點鹹", "img": "/img/lamen/13.jpg"},
+					{"title": "麵屋武藏", "subtitle": "叉燒很大塊", "img": "/img/lamen/14.jpg"},
+					{"title": "麵家三士", "subtitle": "還不錯", "img": "/img/lamen/15.jpg"},
+					{"title": "樂麵屋", "subtitle": "加麵不用錢", "img": "/img/lamen/16.jpg"},
+					{"title": "赤坂拉麵", "subtitle": "湯不錯麵不好", "img": "/img/lamen/17.jpg"},
+					{"title": "玫瑰緣別館", "subtitle": "便宜不錯", "img": "/img/lamen/18.jpg"},
+					{"title": "北投滿客屋", "subtitle": "普通卻很多人", "img": "/img/lamen/19.jpg"}
 				]
 			},
 			{
@@ -248,7 +264,11 @@
 					{"title": "神仙∙江湖∙劍", "subtitle": "宜瑾做的遊戲", "img": "/img/game/godsword.png"},
 					{"title": "暗黑破壞神三", "subtitle": "罐頭當肉盾", "img": "/img/game/d3.jpg"},
 					{"title": "英雄聯盟", "subtitle": "罐頭打不贏宜瑾", "img": "/img/game/lol.jpg"},
-					{"title": "晴空物語", "subtitle": "都罐頭在練", "img": "/img/game/1.jpg"},
+					{"title": "真三國無雙7帝王傳", "subtitle": "復仇者聯盟", "img": "/img/game/7.jpg"},
+					{"title": "無雙OROCHI", "subtitle": "打打殺殺", "img": "/img/game/orochi.jpg"},
+					{"title": "舞動全身", "subtitle": "跳舞減肥", "img": "/img/game/dance.jpg"},
+					{"title": "星際大戰", "subtitle": "玩一下就累了", "img": "/img/game/starwars.jpg"},
+					{"title": "運動大會", "subtitle": "宜瑾桌球超強", "img": "/img/game/sports.jpg"},
 					{"title": "新仙劍", "subtitle": "罐頭抽不到補師", "img": "/img/game/sword.jpg"},
 					{"title": "The SIMS Social", "subtitle": "一直拜訪宜瑾", "img": "/img/game/sims.jpg"}
 				]
